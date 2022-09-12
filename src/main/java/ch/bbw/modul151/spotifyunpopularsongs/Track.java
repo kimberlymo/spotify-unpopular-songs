@@ -17,14 +17,14 @@ public class Track {
     private Double acousticness;
     private Double instrumentalness;
     private Double liveness;
-    //private Double valence;
-    //private Double tempo;
-    //private Double durationMs;
-    //private Boolean explicit;
-    //private Double popularity;
-    //private String trackName;
-    ////forgein key
-    //private String trackArtist;
-    //
-//
+    private Double valence;
+    private Double tempo;
+    private Double durationMs;
+    private Boolean explicit;
+    private Double popularity;
+    private String trackName;
+    //foreign key
+    private String trackArtist;
+
+
 }//
