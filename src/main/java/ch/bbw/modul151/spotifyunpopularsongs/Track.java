@@ -10,18 +10,18 @@ public class Track {
     private String trackId;
     private Double danceability;
     private Double energy;
-    private Double trackKey;
+    private Integer trackKey;
     private Double loudness;
-    private Double mode;
+    private Integer mode;
     private Double speechiness;
     private Double acousticness;
     private Double instrumentalness;
     private Double liveness;
     private Double valence;
     private Double tempo;
-    private Double durationMs;
+    private Integer durationMs;
     private Boolean explicit;
-    private Double popularity;
+    private Integer popularity;
     private String trackName;
     //foreign key
     private String trackArtist;
