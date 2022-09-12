@@ -1,4 +1,4 @@
-package ch.bbw.modul151.spotifyunpopularsongs;
+package ch.bbw.modul151.spotifyunpopularsongs.artist;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
