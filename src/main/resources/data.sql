@@ -4,4 +4,4 @@ FROM CSVREAD('classpath:unpopular_songs.csv');
 
 INSERT INTO ARTIST(ARTIST_NAME, ARTIST_ID, GENRE)
 SELECT *
-FROM CSVREAD('classpath:z_genre_of_artists')
+FROM CSVREAD('classpath:artists.csv')
