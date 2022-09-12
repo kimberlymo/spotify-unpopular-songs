@@ -2,12 +2,11 @@ package ch.bbw.modul151.spotifyunpopularsongs.artist;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
 public class Artist {
-    @Id
     private String artistId;
+    @Id
     private String artistName;
-    private List<String> genre;
+    private String genre;
 }
