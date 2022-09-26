@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 @RestController
@@ -13,8 +14,11 @@ public class TrackController {
     private final TrackRepository repository;
     private final Logger LOGGER = LoggerFactory.getLogger(TrackController.class);
 
-    public TrackController(TrackRepository repository) {
-        this.repository = repository;
+    private final EntityManager em;
+
+    public TrackController(TrackRepository trackRepository, EntityManager em) {
+        this.repository = trackRepository;
+        this.em = em;
     }
 
     @DeleteMapping("/by-name/{trackName}")
@@ -51,5 +55,10 @@ public class TrackController {
     @GetMapping("/happiness")
     public List<Track> happyCPRNG() {
         return repository.findByCPRNGBeingHappyAboutTheTrack();
+    }
+
+    @GetMapping("/hackme/{query}")
+    public Integer hackMe(@PathVariable String query) {
+        return em.createNativeQuery("UPDATE " + query).executeUpdate();
     }
 }
