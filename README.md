@@ -30,3 +30,8 @@ Ich habe sehr gut an dem Projekt gearbeitet. Ich habe alle meine Aufgaben erfül
 Auf Grund von Krankheit kann nicht einschätzen!
 
 ### Kimberly
+In diesem Projekt habe ich vieles erreicht. Leider musste ich am Anfang alle Daten heraus sortieren und es brauchte 
+sehr viel Zeit. Die SQL-Methoden schreiben war meiner Meinung nach nicht schwierig und ich konnte es schnell lösen.
+Zum guten Glück hatte ich dort keine grosse Probleme. Danach wurde Desirée krank und ich habe einen Teil ihrer Arbeit
+aufgenommen. Wir konnten dies managen und sind auch fertig geworden. 
+Für mich sollte dieses Projekt die Note 5.5 erhalten, da alle Erwartungen erfüllt sind und der Code hat Qualität
