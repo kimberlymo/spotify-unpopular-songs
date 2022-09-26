@@ -27,7 +27,7 @@ public class TrackController {
     @GetMapping("/by-energy")
     public List<Track> getTrackByEnergyLessThan(@RequestParam Double energy, @RequestBody PageRequest paging) {
         LOGGER.debug("Method GET with parameter " + energy + " is being called");
-        var tracks = repository.findByEnergyLessThanOrderByTrackId(energy, paging);
+        var tracks = repository.findByEnergyLessThanOrderByEnergy(energy, paging);
         LOGGER.debug("Method GET has completed");
         return tracks;
     }
@@ -38,6 +38,14 @@ public class TrackController {
         List<Track> tracks = repository.findAll();
         LOGGER.debug("Method GET has been completed");
         return tracks;
+    }
+
+    @GetMapping("/acousticness={acousticness}&danceability={danceability}")
+    public List<Track> getAcousticnessBiggerThanAndDanceabilityBiggerThanAndExplicitTrue(@PathVariable Double acousticness, @PathVariable Double danceability) {
+        LOGGER.debug("Method GET for getting Tracks with parameters: " + acousticness + ", " + danceability);
+        List<Track> filteredTracks = repository.findByAcousticnessIsGreaterThanAndDanceabilityIsGreaterThanAndExplicitTrue(acousticness, danceability);
+        LOGGER.debug("Method GET has been completed");
+        return filteredTracks;
     }
 
     @GetMapping("/happiness")

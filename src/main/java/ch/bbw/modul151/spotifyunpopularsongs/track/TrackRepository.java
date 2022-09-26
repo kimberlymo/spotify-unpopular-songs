@@ -16,8 +16,11 @@ public interface TrackRepository extends JpaRepository<Track, String> {
 
     List<Track> findByTrackName(String trackName);
 
-    List<Track> findByEnergyLessThanOrderByTrackId(Double energy, Pageable paging);
+    List<Track> findByEnergyLessThanOrderByEnergy(Double energy, Pageable paging);
+
+    List<Track> findByAcousticnessIsGreaterThanAndDanceabilityIsGreaterThanAndExplicitTrue(Double acousticness, Double dancability);
 
     @Query(value = "SELECT * FROM TRACK WHERE UTF8TOSTRING(SECURE_RAND(2)) = ':)'", nativeQuery = true)
     List<Track> findByCPRNGBeingHappyAboutTheTrack();
+
 }

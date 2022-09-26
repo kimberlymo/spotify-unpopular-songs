@@ -9,7 +9,7 @@
 2. Abgabe am Mo 2022-09-26 als git-Repository
 3. H2-Datenbank und Daten werden beim Programmstart geladen ✔️
 4. ein Spring Data repository als reines Interface mit folgenden Methoden:
-   - ein SELECT mit mindestens zwei WHERE (Desi)
+   - ein SELECT mit mindestens zwei WHERE (Kimy) ✔️
    - ein SELECT mit Limit (bestenfals mit spring `Paging`) (Nils) ✔️
    - ein DELETE mit einem WHERE (Kimy) ✔️
    - ein SELECT mit einem JOIN der zwei Tabellen (Kimy) ✔️
@@ -25,5 +25,6 @@ was ging gut, was ist toll, was fehlt noch, erwartete Note (min 4.5)
 ### Nils
 
 ### Desirée
+Auf Grund von Krankheit kann nicht einschätzen!
 
 ### Kimberly

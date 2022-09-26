@@ -36,7 +36,7 @@ class TrackRepositoryTest {
     @Test
     void findByEnergy() {
         Pageable paging = Pageable.ofSize(1);
-        var tracks = repository.findByEnergyLessThanOrderByTrackId(0.5, paging);
+        var tracks = repository.findByEnergyLessThanOrderByEnergy(0.5, paging);
         assertEquals(tracks.size(), 1);
     }
 
@@ -56,4 +56,14 @@ class TrackRepositoryTest {
         assertNotNull(happiness);
     }
 
+    @Test
+    public void testGetAcousticnessBiggerThanAndDanceabilityBiggerThanAndExplicitTrue() {
+        List<Track> result = repository.findByAcousticnessIsGreaterThanAndDanceabilityIsGreaterThanAndExplicitTrue(0.3, 0.2);
+        assertEquals(183, result.size());
+        for (Track curTrack : result) {
+            assertTrue(curTrack.getExplicit(), "explicit is false!!");
+            assertTrue(curTrack.getAcousticness() > 0.3, "acousticness is smaller!!");
+            assertTrue(curTrack.getDanceability() > 0.2, "danceability is smaller!!");
+        }
+    }
 }
