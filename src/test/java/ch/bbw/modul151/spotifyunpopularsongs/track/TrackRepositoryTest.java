@@ -36,9 +36,9 @@ class TrackRepositoryTest {
     @Test
     void findByEnergy() {
         Pageable paging = Pageable.ofSize(1);
-        var tracks = repository.findByEnergyLessThanOrderByEnergy(0.5, paging);
+        var tracks = repository.findByEnergyLessThanOrderByTrackId(0.5, paging);
         assertEquals(tracks.size(), 1);
-        assertEquals(tracks.get(0).getTrackId(), "5ZD2vOA8j91crGGfEFC6pt");
+        assertEquals(tracks.get(0).getTrackId(), "00FQ7kn8c6zGfMplaD1KoW");
     }
 
     @Test
@@ -52,9 +52,9 @@ class TrackRepositoryTest {
     }
 
     @Test
-    void getCurrentDate() {
-        var date = repository.getCurrentDate();
-        assertNotEquals(date.length(), 0);
+    void happyCPRNG() {
+        var happiness = repository.findByCPRNGBeingHappyAboutTheTrack();
+        assertNotNull(happiness);
     }
 
 }

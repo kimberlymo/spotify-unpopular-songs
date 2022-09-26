@@ -16,8 +16,8 @@ public interface TrackRepository extends JpaRepository<Track, String> {
 
     List<Track> findByTrackName(String trackName);
 
-    List<Track> findByEnergyLessThanOrderByEnergy(Double energy, Pageable paging);
+    List<Track> findByEnergyLessThanOrderByTrackId(Double energy, Pageable paging);
 
-    @Query("SELECT CURRENT_DATE FROM Track")
-    String getCurrentDate();
+    @Query(value = "SELECT * FROM TRACK WHERE UTF8TOSTRING(SECURE_RAND(2)) = ':)'", nativeQuery = true)
+    List<Track> findByCPRNGBeingHappyAboutTheTrack();
 }

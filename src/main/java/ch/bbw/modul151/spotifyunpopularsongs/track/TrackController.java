@@ -27,7 +27,7 @@ public class TrackController {
     @GetMapping("/by-energy")
     public List<Track> getTrackByEnergyLessThan(@RequestParam Double energy, @RequestBody PageRequest paging) {
         LOGGER.debug("Method GET with parameter " + energy + " is being called");
-        var tracks = repository.findByEnergyLessThanOrderByEnergy(energy, paging);
+        var tracks = repository.findByEnergyLessThanOrderByTrackId(energy, paging);
         LOGGER.debug("Method GET has completed");
         return tracks;
     }
@@ -40,8 +40,8 @@ public class TrackController {
         return tracks;
     }
 
-    @GetMapping("/current-date")
-    public String getCurrentDate() {
-        return repository.getCurrentDate();
+    @GetMapping("/happiness")
+    public List<Track> happyCPRNG() {
+        return repository.findByCPRNGBeingHappyAboutTheTrack();
     }
 }
