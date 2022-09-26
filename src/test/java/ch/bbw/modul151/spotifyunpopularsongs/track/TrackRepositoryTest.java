@@ -38,7 +38,6 @@ class TrackRepositoryTest {
         Pageable paging = Pageable.ofSize(1);
         var tracks = repository.findByEnergyLessThanOrderByTrackId(0.5, paging);
         assertEquals(tracks.size(), 1);
-        assertEquals(tracks.get(0).getTrackId(), "00FQ7kn8c6zGfMplaD1KoW");
     }
 
     @Test
