@@ -11,7 +11,7 @@
 4. ein Spring Data repository als reines Interface mit folgenden Methoden:
    - ein SELECT mit mindestens zwei WHERE (Desi)
    - ein SELECT mit Limit (bestenfals mit spring `Paging`) (Desi)
-   - ein DELETE mit einem WHERE (Kimy)
+   - ein DELETE mit einem WHERE (Kimy) ✔️
    - ein SELECT mit einem JOIN der zwei Tabellen (Kimy)
    - eine komplizierte Abfrage welche nur mit einem `@Query` möglich ist (Nils)
 5. alle Methoden mit JUnit getestet (alle)

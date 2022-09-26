@@ -1,7 +1,8 @@
 package ch.bbw.modul151.spotifyunpopularsongs.track;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import ch.bbw.modul151.spotifyunpopularsongs.artist.Artist;
+
+import javax.persistence.*;
 
 @Entity
 public class Track {
@@ -23,8 +24,8 @@ public class Track {
     private Boolean explicit;
     private Integer popularity;
     private String trackName;
-    //foreign key
-    private String trackArtist;
-
+    @ManyToOne
+    @JoinColumn(name="TRACK_ARTIST")
+    private Artist trackArtist;
 
 }

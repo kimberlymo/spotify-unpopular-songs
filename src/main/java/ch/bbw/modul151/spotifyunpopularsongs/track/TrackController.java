@@ -17,10 +17,10 @@ public class TrackController {
         this.repository = repository;
     }
 
-    @DeleteMapping("/{artistName}")
-    public void deleteTrackByArtist(@PathVariable String artistName) {
-        LOGGER.debug("Method DELETE with parameter " + artistName + " is being called");
-        repository.deleteByTrackArtist(artistName);
+    @DeleteMapping("/{trackName}")
+    public void deleteTrackByName(@PathVariable String trackName) {
+        LOGGER.debug("Method DELETE with parameter " + trackName + " is being called");
+        repository.deleteByTrackName(trackName);
         LOGGER.debug("Method DELETE has completed");
     }
 }

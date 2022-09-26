@@ -10,7 +10,7 @@ import java.util.List;
 public interface TrackRepository extends JpaRepository<Track, String> {
 
     @Transactional
-    void deleteByTrackArtist(String artistToDelete);
+    void deleteByTrackName(String trackToDelete);
 
-    List<Track> findByTrackArtist(String artistName);
+    List<Track> findByTrackName(String trackName);
 }

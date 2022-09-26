@@ -11,23 +11,22 @@ class TrackRepositoryTest {
 
     @Autowired
     private TrackRepository repository;
-    private String artistNameToDelete;
+    private static final String TRACK_NAME_DELETE_CORRECT = "Ride on It (Live)";
+    private static final String TRACK_NAME_DELETE_INCORRECT = "bobby123455";
 
     @Test
-    void deleteIsSuccessful() {
-        artistNameToDelete = "James Reeder";
-
-        assertEquals(10877, repository.count());
-        repository.deleteByTrackArtist(artistNameToDelete);
-        assertEquals(10852, repository.count());
-        assertEquals(0, repository.findByTrackArtist(artistNameToDelete).size());
+    void deleteByTrackNameIsSuccessful() {
+        assertEquals(1866, repository.count());
+        repository.deleteByTrackName(TRACK_NAME_DELETE_CORRECT);
+        assertEquals(1865, repository.count());
+        assertEquals(0, repository.findByTrackName(TRACK_NAME_DELETE_CORRECT).size());
     }
 
     @Test
-    void deleteTrackArtistNotFound() {
-        artistNameToDelete = "bobby123455";
-
-        assertEquals(0, repository.findByTrackArtist(artistNameToDelete).size());
+    void deleteTrackNameNotFound() {
+        assertEquals(0, repository.findByTrackName(TRACK_NAME_DELETE_INCORRECT).size());
+        assertEquals(1866, repository.count());
+        repository.deleteByTrackName(TRACK_NAME_DELETE_INCORRECT);
+        assertEquals(1866, repository.count());
     }
-
 }
