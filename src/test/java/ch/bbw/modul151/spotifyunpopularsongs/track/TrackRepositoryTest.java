@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -37,6 +39,16 @@ class TrackRepositoryTest {
         var tracks = repository.findByEnergyLessThanOrderByEnergy(0.5, paging);
         assertEquals(tracks.size(), 1);
         assertEquals(tracks.get(0).getTrackId(), "5ZD2vOA8j91crGGfEFC6pt");
+    }
+
+    @Test
+    void getTrackWithArtist() {
+        List<Track> tracks = repository.findAll();
+        assertNotNull(tracks);
+        for (Track curTrack : tracks) {
+            assertNotNull(curTrack.getTrackArtist());
+            assertNotNull(curTrack.getTrackArtist().getArtistId());
+        }
     }
 
 }

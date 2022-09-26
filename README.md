@@ -10,12 +10,20 @@
 3. H2-Datenbank und Daten werden beim Programmstart geladen ✔️
 4. ein Spring Data repository als reines Interface mit folgenden Methoden:
    - ein SELECT mit mindestens zwei WHERE (Desi)
-   - ein SELECT mit Limit (bestenfals mit spring `Paging`) (Desi)
+   - ein SELECT mit Limit (bestenfals mit spring `Paging`) (Nils) ✔️
    - ein DELETE mit einem WHERE (Kimy) ✔️
-   - ein SELECT mit einem JOIN der zwei Tabellen (Kimy)
+   - ein SELECT mit einem JOIN der zwei Tabellen (Kimy) ✔️
    - eine komplizierte Abfrage welche nur mit einem `@Query` möglich ist (Nils)
 5. alle Methoden mit JUnit getestet (alle)
 6. alle Methoden als REST-endpunkt verfügbar (alle)
 7. eine Selbsteinschätzung im README:
 was ging gut, was ist toll, was fehlt noch, erwartete Note (min 4.5)
 8. Bonus: eine Methode, welche SQL-Injection anfällig ist (Nils)
+
+## Selbsteinschätzungen
+
+### Nils
+
+### Desirée
+
+### Kimberly
