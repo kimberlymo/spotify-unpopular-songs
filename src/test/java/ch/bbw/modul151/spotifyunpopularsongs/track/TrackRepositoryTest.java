@@ -51,4 +51,10 @@ class TrackRepositoryTest {
         }
     }
 
+    @Test
+    void getCurrentDate() {
+        var date = repository.getCurrentDate();
+        assertNotEquals(date.length(), 0);
+    }
+
 }

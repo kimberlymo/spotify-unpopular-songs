@@ -2,6 +2,7 @@ package ch.bbw.modul151.spotifyunpopularsongs.track;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +18,6 @@ public interface TrackRepository extends JpaRepository<Track, String> {
 
     List<Track> findByEnergyLessThanOrderByEnergy(Double energy, Pageable paging);
 
-    //@Query("SELECT * FROM TRACK")
-    //List<Track> getTrackOlderThanOneYear();
+    @Query("SELECT CURRENT_DATE FROM Track")
+    String getCurrentDate();
 }

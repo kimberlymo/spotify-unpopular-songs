@@ -3,7 +3,6 @@ package ch.bbw.modul151.spotifyunpopularsongs.track;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,5 +38,10 @@ public class TrackController {
         List<Track> tracks = repository.findAll();
         LOGGER.debug("Method GET has been completed");
         return tracks;
+    }
+
+    @GetMapping("/current-date")
+    public String getCurrentDate() {
+        return repository.getCurrentDate();
     }
 }
