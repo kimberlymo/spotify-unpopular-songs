@@ -13,4 +13,9 @@ public interface TrackRepository extends JpaRepository<Track, String> {
     void deleteByTrackName(String trackToDelete);
 
     List<Track> findByTrackName(String trackName);
+
+    List<Track> findByEnergyLessThanOrderByEnergy(Double energy, Pageable paging);
+
+    //@Query("SELECT * FROM TRACK")
+    //List<Track> getTrackOlderThanOneYear();
 }
